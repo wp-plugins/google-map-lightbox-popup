@@ -1,0 +1,150 @@
+#gfullmap_admin {width: 892px; margin-top: 5px; float:left; height:auto; border: 1px double #DCDCD3; }
+
+#gfullmap_admin table{width:100%;}
+
+#gfullmap_admin table tr td{padding:10px 0;}
+
+#poststuff .show_con{
+  
+	border-top: 1px solid #D7D7D7;
+    float: left;
+    font-size: 13px;
+    height: auto;
+    margin-bottom: 10px; 
+    padding-bottom: 10px;
+    padding-top: 17px;
+    width: 100%;
+}
+#gfullmap_admin .fwgm_map_name{
+	width:115px;
+	float:left;
+	height:auto;
+	word-wrap: break-word;
+	margin-right:20px;
+	text-align:center;
+}
+
+#gfullmap_admin .fwgm_id{
+	float: left;
+    margin-left: 51px;
+    width: 80px;
+}
+
+#gfullmap_admin .fwgm_edit_link{
+	width:124px;
+	float:left;
+	height:auto
+}
+
+#poststuff .fwgm_shortcode_name{
+	float: left;
+	height: auto;
+	margin-right: 20px;
+	width: 229px;
+	word-wrap: break-word;
+	 text-align: center;
+}
+
+#gfullmap_admin.postbox div.inside form table tbody tr td{
+height:Auto;
+font-weight:bold;
+font-size:12px;
+}
+
+#gfullmap_admin.postbox div.inside form table tbody tr td textarea, input[type="text"], input[type="password"], input[type="file"], input[type="button"], input[type="submit"], input[type="reset"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select{
+font-weight:normal;}
+
+#gfullmap_admin.postbox h3.hndle{
+color: #000000;
+height: 20px;
+padding: 10px;
+font-size:18px;
+}
+
+.show-message{ background: none repeat scroll 0 0 #125E7C; border-radius: 3px 3px 3px 3px; color: #FFFFFF; font-weight: bold; line-height: 30px; text-align: center; width: 891px;font-family: Georgia; margin-top:20px;}
+
+.gmapfrnt-show-message{ background: none repeat scroll 0 0 #125E7C; border-radius: 3px 3px 3px 3px; color: #FFFFFF; font-weight: bold; line-height: 30px; text-align: center; width: 892px;font-family: Georgia; margin-top:20px;}
+
+#gfullmap_admin .form_cont {
+float:left;
+height:auto;
+width:100%;
+background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(top, #eeeeee 17%, #cccccc 88%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(17%,#eeeeee), color-stop(88%,#cccccc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #eeeeee 17%,#cccccc 88%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #eeeeee 17%,#cccccc 88%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #eeeeee 17%,#cccccc 88%); /* IE10+ */
+background: linear-gradient(to bottom, #eeeeee 17%,#cccccc 88%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+
+#gfullmap_admin .form_cont form{ margin-left: 13px;}
+
+#gfullmap_admin .form_cont form table span { font-size:10px; color:#B52222;}
+
+#gfullmap_update { margin-left:20px;}
+
+.g_map_delete_btn {
+background:#D84949;
+padding:4px 10px;
+border-radius:3px;
+color: #ffffff;
+border:1px solid #D84949;
+font-size:12px;
+text-decoration: none;
+text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.g_map_delete_btn:hover{
+background:#FDB944;
+padding:4px 10px;
+border-radius:3px;
+color: red;
+border:1px solid #F9B03F;
+font-size:12px;
+text-decoration: none;
+text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#gfullmap_add_btn{  font-size: 17px; font-weight: bold; width: 170px;}
+
+#gfullmap_admin.postbox  table tbody tr td{ margin-right:10px; }
+
+#gfullmap_admin .fwgm_edit_link a{ text-align:center!important;}
+
+#gfullmap_admin .fwgm_activate{
+float: left;
+height: auto;
+margin-left: 8px;
+margin-right: 10px;
+width: 106px;
+}
+
+#gfullmap_admin.postbox div.inside form table tbody tr{ margin-top:10px; }
+
+#gfullmap_admin .fwgm_delete_link{
+	float: left;
+	height: auto;
+	margin-left: 13px;
+	margin-top: 4px;
+	width: 83px;
+}
+
+.show-message-edit{
+	background: none repeat scroll 0 0 #125E7C;
+	border-radius: 3px 3px 3px 3px;
+	color: #FFFFFF;
+	font-family: Georgia;
+	font-weight: bold;
+	line-height: 30px;
+	margin-top: 20px;
+	text-align: center;
+	width: 754px;
+}
+
+#gfullmap_admin.postbox h3.hndle span span{ color: #4F5484; font-style: italic;}
+
+.postbox div.inside form table tbody tr.hide{
+display:none;
+}
