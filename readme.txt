@@ -27,7 +27,7 @@ Google Map Popup plugin allows you to add a google map popup image which on clic
 Read more about the plugin <a href="http://www.wpfruits.com/downloads/wp-plugins/google-map-lightbox-popup-wordpress-plugin/"> Here </a>
 
 
-=Features  =
+= Features =
  -   Add a google map popup feature for your website.
  -   you can create any number of google map popus.
  -   Widget to use the pop up in sidebar
