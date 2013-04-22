@@ -3,28 +3,31 @@
 Plugin Name:Google Map Lightbox
 Plugin URI: http://www.wpfruits.com/
 Description: This plugin will show Google Map in Lightbox.
-Author: Gunjan Rai, Megha, rahulbrilliant2004, tikendramaitry
-Version: 1.0.0
+Author: rahulbrilliant2004, tikendramaitry, Nishant Jain, Gunjan Rai, Megha
+Version: 1.0.1
 Author URI: http://www.wpfruits.com
 */
 // ----------------------------------------------------------------------------------
 
+// include all required files
+include_once('admin/admin.php');
+
 // ADD Styles and Script in head section
 add_action('admin_init', 'gfullmap_backend_scripts');
 add_action('wp_enqueue_scripts', 'gfullmap_frontend_scripts');
-
-include_once('admin/admin.php');
-
 function gfullmap_backend_scripts() {
 	if(is_admin()){
-		wp_enqueue_script ('jquery');		
-		wp_enqueue_style( 'gfullmap_backend_style',plugins_url('admin/gfullmap_admin.css',__FILE__), false, '1.0.0' );	
-		wp_enqueue_script('media-upload');
-		wp_enqueue_script('thickbox');
-		wp_register_script('my-upload', plugins_url('js/my-script.js',__FILE__), array('jquery','media-upload','thickbox'));
+		wp_enqueue_script('jquery');		
+		wp_enqueue_style('gfullmap_backend_style',plugins_url('admin/gfullmap_admin.css',__FILE__), false, '1.0.0' );	
+		wp_register_script('my-upload', plugins_url('js/gfullmap-admin.js',__FILE__), array('jquery','media-upload','thickbox'));
 		wp_enqueue_script('my-upload');
-		wp_enqueue_style('thickbox');
+		
+		if(isset($_GET['page']) && $_GET['page']=="edit-map"){
+			wp_enqueue_script('media-upload');
+			wp_enqueue_script('thickbox');
+			wp_enqueue_style('thickbox');		
 		}
+	}
 }
 
 function gfullmap_frontend_scripts() {	
@@ -55,7 +58,6 @@ function gfullmap_defaults(){
         'glightbox_map_type' => 'roadmap',
         'glightbox_zoom_val' => '15',
         'glightbox_bubble' => '1'
-		
     );
 	return $default;
 }
@@ -74,13 +76,11 @@ function create_fwgm_table(){
 		);";
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		dbDelta($sql);
-	}
+}
+
 // Runs when plugin is activated and creates new database field
-
 function gfullmap_plugin_install(){
-
 	$gfullmap_options = get_option('gfullmap_options');
-
 	if(!$gfullmap_options){}
 	add_option('gfullmap_options', gfullmap_defaults());
 	
@@ -127,15 +127,12 @@ function gfullmap_get_version(){
 	$plugin_folder = get_plugins( '/' . plugin_basename( dirname( __FILE__ ) ) );
 	$plugin_file = basename( ( __FILE__ ) );
 	return $plugin_folder[$plugin_file]['Version'];
-	}
+}
 	
-	
-
 add_action('activated_plugin','save_error');
 function save_error(){
     update_option('plugin_error',  ob_get_contents());
 }
-	
 	
 function gfullmap_backend_menu(){
 wp_nonce_field('update-options'); $options = get_option('gfullmap_options'); 

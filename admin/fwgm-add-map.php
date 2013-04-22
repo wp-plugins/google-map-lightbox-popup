@@ -95,4 +95,5 @@ if(isset($_GET['delete'])){
 	global $wpdb;
 	$table_name = $wpdb->prefix . "fullwidthgooglemap"; 			
 	$sql = "DELETE FROM " . $table_name . " WHERE option_name='".$id."';";
-	$wpdb->query( $sql );	}?>
+	$wpdb->query( $sql );	}
+?>
