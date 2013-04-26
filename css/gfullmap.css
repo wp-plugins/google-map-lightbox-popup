@@ -1,9 +1,9 @@
 
 #createPopup{
- z-index:999998; top:50%; left:50%;  position:fixed; float:left; width:0px; background:url("../images/thelightbox_bg.png");  height:0px;
+ z-index:999998; border:0px;outline-width:0px; top:50%; left:50%;  position:fixed; float:left; width:0px; background:url("../images/thelightbox_bg.png");  height:0px;
 }
 
-a.wpf_ref{position:absolute;bottom:10px;left:10px;color:#000;font-weight:bold;font-size:11px;background:#fff}
+a.wpf_ref{ background: none repeat scroll 0 0 #000000; bottom: 16px; color: #FFFFFF; font-size: 8px; font-weight: bold; left: 10px; padding: 2px; position: absolute; text-decoration: none; }
 
 .cf-close{
     background: url("../images/close.png") no-repeat scroll 0 0 transparent;

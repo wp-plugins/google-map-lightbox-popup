@@ -4,7 +4,7 @@ Donate link: http://www.wpfruits.com/
 Tags: google map popup, google map plugin, map address google, google map contact pop up, google map lightbox popup, google map lightbox, google map widget, google map popup widget
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,9 @@ http://wpfruits.com/wp-content/uploads/2013/04/image2.png
 == Changelog ==
 Version 1.0.1
 Fixed Media upload image issue
+
+Version 1.0.2
+Fixed Google map info window issue.
 
 
 == Upgrade notice ==

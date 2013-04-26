@@ -4,14 +4,14 @@ height:'0%',
 width:'0%',
 top:'50%',
 left:'50%',
-}, 200, function() {
+}, 0, function() {
 // Animation complete.
 });
 jQuery('.innerdiv').css({'display':'none','top': 0 });     
 }
 
 jQuery('document').ready(function(){ 
-	jQuery('#click_it').click(function(){
+	jQuery('.click_it').click(function(){
 	jQuery('#createPopup').animate({
 	height:'100%',
 	width:'100%',
@@ -24,7 +24,7 @@ jQuery('document').ready(function(){
 	var x = jQuery(window).height();
 	var y= (x/2)- map_val;
 	if(y < 0 ){y=0;}
-	jQuery('.innerdiv').css({'display':'block','top': y });
+	jQuery('.innerdiv').css({'display':'block','top': y, });
 	});
 	jQuery('#createPopup').click(function(){
 		generate_popup();
