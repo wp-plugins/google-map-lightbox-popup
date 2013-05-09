@@ -1,5 +1,5 @@
 function generate_popup(){		
-jQuery('#createPopup').animate({
+jQuery('.createPopup').animate({
 height:'0%',
 width:'0%',
 top:'50%',
@@ -12,7 +12,10 @@ jQuery('.innerdiv').css({'display':'none','top': 0 });
 
 jQuery('document').ready(function(){ 
 	jQuery('.click_it').click(function(){
-	jQuery('#createPopup').animate({
+	
+	var createp ='.'+ (jQuery(this).attr('class-value'));
+	
+	jQuery(createp).animate({
 	height:'100%',
 	width:'100%',
 	top:'0',
@@ -26,7 +29,7 @@ jQuery('document').ready(function(){
 	if(y < 0 ){y=0;}
 	jQuery('.innerdiv').css({'display':'block','top': y, });
 	});
-	jQuery('#createPopup').click(function(){
+	jQuery('.createPopup').click(function(){
 		generate_popup();
 	});
 	jQuery('.innerdiv').click(function(e){

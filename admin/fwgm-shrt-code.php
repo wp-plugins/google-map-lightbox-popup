@@ -28,7 +28,7 @@ function fwbgm_front_show($option='gfullmap_options'){
 		if(array_key_exists("g_image_chkbox" ,$options)) { 
 			$tmp="";
 			$tmp .= '<p style="position:relative;"><a class="wpf_ref" href="'.$from_this.'" target="_blank">WPF</a><a class="gfullmap-thumbnail-map" href="#dialog-lightgmap-'.$option.'" title="Click to open larger map">';
-			echo $tmp .= '<img class="click_it" style="background: none repeat scroll 0 0 #F3F3F3;border: 1px solid #CCCCCC; padding: 5px;" title="Click to open larger map" alt="Click to open larger map" src="'.$options['g_image_path'].'" width ='. $options['g_thumb_width']. 'x height = '. $options['g_thumb_height'].'></a>';
+			echo $tmp .= '<img class="click_it" class-value="createPopup-'.$option.'" style="background: none repeat scroll 0 0 #F3F3F3;border: 1px solid #CCCCCC; padding: 5px;" title="Click to open larger map" alt="Click to open larger map" src="'.$options['g_image_path'].'" width ='. $options['g_thumb_width']. 'x height = '. $options['g_thumb_height'].'></a>';
 			$tmp .= '</p>';
 			$out = $tmp ;	
 		} else
@@ -36,15 +36,14 @@ function fwbgm_front_show($option='gfullmap_options'){
 
 			$tmp="";
 			$tmp .= '<p id="cf_custom_content"  style="position:relative;"><a class="wpf_ref" href="'.$from_this.'" target="_blank">WPF</a> <a  class="gfullmap-thumbnail-map"  href="#?custom=true&width=500&height=500" title="Click to open larger map">';
-			$tmp .= '<img class="click_it" style="background: none repeat scroll 0 0 #F3F3F3;border: 1px solid #CCCCCC; padding: 5px;" title="Click to open larger map" alt="Click to open larger map" src="https://maps.googleapis.com/maps/api/staticmap?center=' .
+			$tmp .= '<img class="click_it" class-value="createPopup-'.$option.'" style="background: none repeat scroll 0 0 #F3F3F3;border: 1px solid #CCCCCC; padding: 5px;" title="Click to open larger map" alt="Click to open larger map" src="https://maps.googleapis.com/maps/api/staticmap?center=' .
 			
 			urlencode($options['g_thumb_address']) . '&amp;zoom=' . $options['g_zoom_val'] .
 			'&amp;size=' . $options['g_thumb_width'] . 'x' . $options['g_thumb_height'] . '&amp;maptype=' . $options['g_map_type'] .
 			'&amp;sensor=false&amp;scale=1&amp;markers=size:red%7Ccolor:small%7Clabel:A%7C' .
 			urlencode($options['g_thumb_address']) . '"></a>';
 			$tmp .= '</p>';
-			$out = $tmp ;
-			echo $out;				
+			$out = $tmp ;					
 	        }
     	}		
 	}
@@ -103,7 +102,7 @@ function show_lightbox($option='gfullmap_options') {
 
          $lout .= '<div class="gmbdm-dialog"  data-map-height="' . $fgm_glightbox_height . '" gmaptype="'.$fgm_glightbox_map_type.'" data-map-width="' . $fgm_glightbox_width . '" data-map-skin="black-square" data-map-iframe-url="' . $map_url . '" id="dialog-lightgmap-'.$option.'" title="Google Map">';
 		 
-         $lout .= '<div id="createPopup" style="overflow: auto;" class="gmbdm-map  "> 
+         $lout .= '<div class="createPopup gmbdm-map createPopup-'.$option.'  " style="overflow: auto;"> 
 		 <div class="innerdiv" style=" border:10px solid #000000; z-index:999999999;position:relative; margin:auto; display:block; height:'.$fgm_glightbox_height.'px; width:'.$fgm_glightbox_width.'px;"><div class="cf-close"></div><iframe  height='.$fgm_glightbox_height.'px width='.$fgm_glightbox_width.'px src="'.$map_url.'"> </iframe> </div>  </div>';
 
         // $lout .= '<a class="wpf_ref"'.$from_this.'" target="_blank">WPF</a>'; 

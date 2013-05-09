@@ -3,8 +3,8 @@
 Plugin Name:Google Map Lightbox
 Plugin URI: http://www.wpfruits.com/
 Description: This plugin will show Google Map in Lightbox.
-Author: rahulbrilliant2004, tikendramaitry, Nishant Jain, Gunjan Rai, Megha
-Version: 1.0.2
+Author: rahulbrilliant2004, tikendramaitry, Nishant Jain, Gunjan Rai, Megha Sharma
+Version: 1.0.4
 Author URI: http://www.wpfruits.com
 */
 // ----------------------------------------------------------------------------------
@@ -57,6 +57,7 @@ function gfullmap_defaults(){
         'glightbox_height' => 450,
         'glightbox_map_type' => 'roadmap',
         'glightbox_zoom_val' => '15',
+		'gmap_language' => 'en',
         'glightbox_bubble' => '1'
     );
 	return $default;
