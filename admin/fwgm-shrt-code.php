@@ -36,14 +36,14 @@ function fwbgm_front_show($option='gfullmap_options'){
 
 			$tmp="";
 			$tmp .= '<p id="cf_custom_content"  style="position:relative;"><a class="wpf_ref" href="'.$from_this.'" target="_blank">WPF</a> <a  class="gfullmap-thumbnail-map"  href="#?custom=true&width=500&height=500" title="Click to open larger map">';
-			$tmp .= '<img class="click_it" class-value="createPopup-'.$option.'" style="background: none repeat scroll 0 0 #F3F3F3;border: 1px solid #CCCCCC; padding: 5px;" title="Click to open larger map" alt="Click to open larger map" src="https://maps.googleapis.com/maps/api/staticmap?center=' .
+			echo $tmp .= '<img class="click_it" class-value="createPopup-'.$option.'" style="background: none repeat scroll 0 0 #F3F3F3;border: 1px solid #CCCCCC; padding: 5px;" title="Click to open larger map" alt="Click to open larger map" src="https://maps.googleapis.com/maps/api/staticmap?center=' .
 			
 			urlencode($options['g_thumb_address']) . '&amp;zoom=' . $options['g_zoom_val'] .
 			'&amp;size=' . $options['g_thumb_width'] . 'x' . $options['g_thumb_height'] . '&amp;maptype=' . $options['g_map_type'] .
 			'&amp;sensor=false&amp;scale=1&amp;markers=size:red%7Ccolor:small%7Clabel:A%7C' .
 			urlencode($options['g_thumb_address']) . '"></a>';
 			$tmp .= '</p>';
-			$out = $tmp ;					
+		     $out = $tmp ;					
 	        }
     	}		
 	}
