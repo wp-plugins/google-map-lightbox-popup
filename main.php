@@ -4,7 +4,7 @@ Plugin Name:Google Map Lightbox
 Plugin URI: http://www.wpfruits.com/downloads/wp-plugins/google-map-lightbox-popup-wordpress-plugin/
 Description: This plugin will show Google Map in Lightbox.
 Author: rahulbrilliant2004, tikendramaitry, Nishant Jain
-Version: 1.0.5
+Version: 1.0.6
 Author URI: http://www.wpfruits.com
 */
 // ----------------------------------------------------------------------------------

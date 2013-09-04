@@ -4,6 +4,7 @@ height:'0%',
 width:'0%',
 top:'50%',
 left:'50%',
+visibility:'visible',
 }, 0, function() {
 // Animation complete.
 });
@@ -14,7 +15,7 @@ jQuery('document').ready(function(){
 	jQuery('.click_it').click(function(){
 	
 	var createp ='.'+ (jQuery(this).attr('class-value'));
-	
+	jQuery(createp).css({visibility:'visible'});
 	jQuery(createp).animate({
 	height:'100%',
 	width:'100%',
