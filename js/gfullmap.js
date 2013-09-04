@@ -4,7 +4,7 @@ height:'0%',
 width:'0%',
 top:'50%',
 left:'50%',
-visibility:'visible',
+visibility:'hidden',
 }, 0, function() {
 // Animation complete.
 });
