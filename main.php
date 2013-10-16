@@ -4,7 +4,7 @@ Plugin Name:Google Map Lightbox
 Plugin URI: http://www.wpfruits.com/downloads/wp-plugins/google-map-lightbox-popup-wordpress-plugin/
 Description: This plugin will show Google Map in Lightbox.
 Author: rahulbrilliant2004, tikendramaitry, Nishant Jain
-Version: 1.0.6
+Version: 1.0.7
 Author URI: http://www.wpfruits.com
 */
 // ----------------------------------------------------------------------------------
@@ -208,4 +208,6 @@ echo get_option('plugin_error');
 		</div><!-- inside div end -->	
 	</div> <!-- postbox div end -->
 </div> <!-- poststuff end -->
+<div style="clear:both;"></div>
+<iframe class="gmaplbox_iframe" src="http://www.sketchthemes.com/sketch-updates/plugin-updates/cbar-lite/cbar-lite.php" width="250px" height="370px" scrolling="no" ></iframe> 
 <?php } ?>
