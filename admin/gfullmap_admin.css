@@ -148,3 +148,7 @@ width: 106px;
 .postbox div.inside form table tbody tr.hide{
 display:none;
 }
+#adminmenu a[href="admin.php?page=edit-map"]{display:none;}
+.gmaplbox_iframe{
+border:1px solid #dfdfdf;padding:4px;border-radius:2px;
+}
