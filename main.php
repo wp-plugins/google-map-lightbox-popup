@@ -4,7 +4,7 @@ Plugin Name:Google Map Lightbox
 Plugin URI: http://www.wpfruits.com/downloads/wp-plugins/google-map-lightbox-popup-wordpress-plugin/
 Description: This plugin will show Google Map in Lightbox.
 Author: rahulbrilliant2004, tikendramaitry, Nishant Jain
-Version: 1.0.7
+Version: 2.0.0
 Author URI: http://www.wpfruits.com
 */
 // ----------------------------------------------------------------------------------
@@ -41,24 +41,24 @@ function gfullmap_frontend_scripts() {
 // Hook for adding admin menus
 add_action('admin_menu', 'gfullmap_plugin_admin_menu');
 function gfullmap_plugin_admin_menu() {
-     add_menu_page('gfullmap', 'GoogleMap lightbox','administrator', 'gfullmap', 'gfullmap_backend_menu',plugins_url('images/map-icon.png',__FILE__));
+     add_menu_page('gfullmap', 'GoogleMap Lightbox','administrator', 'gfullmap', 'gfullmap_backend_menu',plugins_url('images/map-icon.png',__FILE__));
 	 add_submenu_page('gfullmap', 'Edit Map','', 'administrator','edit-map','edit_details');
 }
 //This function will create new database fields with default values
 function gfullmap_defaults(){
 	    $default = array(
-		'g_image_path'=>'',
-		'g_thumb_address' => 'New York, USA',
-		'g_thumb_width' => 250,
-		'g_thumb_height' => 250,
-		'g_map_type' => 'roadmap',
-		'g_zoom_val' => '15',
-		'glightbox_width' => 450,
-        'glightbox_height' => 450,
+		'g_image_path'       =>'',
+		'g_thumb_address'    => 'Eiffel Tower',
+		'g_thumb_width'      => 250,
+		'g_thumb_height'     => 250,
+		'g_map_type'         => 'roadmap',
+		'g_zoom_val'         => '15',
+		'glightbox_width'    => 450,
+        'glightbox_height'   => 450,
         'glightbox_map_type' => 'roadmap',
         'glightbox_zoom_val' => '15',
-		'gmap_language' => 'en',
-        'glightbox_bubble' => '1'
+		'gmap_language'      => 'en',
+        'glightbox_bubble'   => '1'
     );
 	return $default;
 }
@@ -66,17 +66,17 @@ function gfullmap_defaults(){
 function create_fwgm_table(){
     global $wpdb;
 	$table_name = $wpdb->prefix . "fullwidthgooglemap"; 
-		$sql = "CREATE TABLE " . $table_name . " (
-		  id mediumint(9) NOT NULL AUTO_INCREMENT,
-		  option_name VARCHAR(255) NOT NULL DEFAULT  'gfullmap_options',
-		  active tinyint(1) NOT NULL DEFAULT  '0',
-		  PRIMARY KEY (`id`),
-          UNIQUE (
-                    `option_name`
-            )
-		);";
-		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-		dbDelta($sql);
+	$sql = "CREATE TABLE " . $table_name . " (
+	  id mediumint(9) NOT NULL AUTO_INCREMENT,
+	  option_name VARCHAR(255) NOT NULL DEFAULT  'gfullmap_options',
+	  active tinyint(1) NOT NULL DEFAULT  '0',
+	  PRIMARY KEY (`id`),
+	  UNIQUE (
+		 `option_name`
+	  )
+	);";
+	require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+	dbDelta($sql);
 }
 
 // Runs when plugin is activated and creates new database field
@@ -136,70 +136,75 @@ function save_error(){
 }
 	
 function gfullmap_backend_menu(){
-wp_nonce_field('update-options'); $options = get_option('gfullmap_options'); 
-echo get_option('plugin_error');
+	wp_nonce_field('update-options'); $options = get_option('gfullmap_options'); 
+	echo get_option('plugin_error');
 ?>
 
-<div class="wrap"> <!--wrap div start-->
+<!--wrap div start-->
+<div class="wrap">
 	<div id="icon-themes" class="icon32"></div>
 	<h2> <?php _e('GoogleMap LightBox '.gfullmap_get_version().' Setting\'s','gfullmap'); ?> </h2>
-</div>	<!--wrap div end-->
+</div>	
+<!--wrap div end-->
+
 <div id="poststuff">
-   <?php global $fwbm;
-       if(isset($_REQUEST['gfullmap_add_btn'])){
+
+   <?php 
+		global $fwbm;
+		
+        if(isset($_REQUEST['gfullmap_add_btn'])){
 			add_map_details();
-			}
-			
+		}
 		if(isset($_GET['deactivate'])){		
-		 	echo "<div class='gmapfrnt-show-message'>"; 
+		 	echo "<div class='gmapfrnt-show-message updated'>"; 
 			_e('Map Has been Deactivated','gfullmap');
 			echo "</div>";
 		}
-		
 		if(isset($_GET['activate'])){	
-			echo "<div class='gmapfrnt-show-message'>"; 
+			echo "<div class='gmapfrnt-show-message updated'>"; 
 			_e('Map Has been Activated','gfullmap');
 			echo "</div>";
 		}
-		
 		if(isset($_GET['delete'])){	
-			echo "<div class='gmapfrnt-show-message'>"; 
+			echo "<div class='gmapfrnt-show-message updated'>"; 
 			_e('Map Has been Deleted','contactform');
 			echo "</div>";	
 		}
+	?>		
+	
+	<!-- postbox start -->		
+	<div class="postbox" id="gfullmap_admin"> 
 		
-	?>			
-			
-	<div class="postbox" id="gfullmap_admin"> <!-- postbox start -->
-		<h3 class="hndle"><span style="font-family: verdana;"> <?php _e("Table Of Lightbox Google Map",'gfullmap'); ?> </span></h3>
-		<div class="inside" style="padding: 0px; float:left;margin:0px;width:100%;">	<!-- inside div start -->				
-		    <table style = "text-align:center; font-weight:bold; font-size:12px;">
+		<h3 class="hndle"><span style="font-family: verdana;"><?php _e("Table Of GoogleMap Lightbox",'gfullmap'); ?></span></h3>
+		<div class="inside" style="padding: 0px; float:left;margin:0px;width:100%;">	
+			<!-- inside div start -->				
+		    <table style="text-align:center;font-weight:bold;font-size:12px;background:#eeeeee; border-top: 1px solid #DDDDDD;">
 				<tr>
-					 <td style=" color:#04569A;width:112px;"> ID </td>
-					 <td style="color:#04569A; "> Map Name</td>
-					 <td style="width:157px;color:#04569A; "> Shortcode</td> 
-					 <td style="text-align:right;color:#04569A;"> Edit Map</td> 
-					 <td style="text-align:right;width:150px;color:#04569A;">Activate Map</td> 
-					 <td style="width:176px;color:#04569A;">Delete Map</td> 
-					  
+					<td style="color:#04569A;width:112px;"><?php _e("ID",'gfullmap'); ?></td>
+					<td style="color:#04569A;"><?php _e("Map Name",'gfullmap'); ?></td>
+					<td style="width:157px;color:#04569A; "><?php _e("Shortcode",'gfullmap'); ?></td> 
+					<td style="text-align:right;color:#04569A;"><?php _e("Edit Map",'gfullmap'); ?></td> 
+					<td style="text-align:right;width:150px;color:#04569A;"><?php _e("Activate Map",'gfullmap'); ?></td> 
+					<td style="width:176px;color:#04569A;"><?php _e("Delete Map",'gfullmap'); ?></td> 
 				</tr>
 			</table>			
-			<?php  if(!(isset($_GET['add']) && $_GET['add']==1)) {
+			
+			<?php  
+				if(!(isset($_GET['add']) && $_GET['add']==1)) {
 					fwgm_get_map_details();		
-			} ?>
-			
-			<?php  if((isset($_GET['add']) && $_GET['add']==1)) { 				
-				display_map_info();
-			} ?>
-			
-			
+				}
+				if((isset($_GET['add']) && $_GET['add']==1)) { 				
+					display_map_info();
+				} 
+			?>
+		
 			<div class="form_cont">
 				<form method="post" action="?page=gfullmap&add=1"> <!-- Add new Map Form start -->
 					<table>
 						<tr>
-						 <td><input style=" border: 1px solid #AAAAAA;" type="text" id="fullmap_option_name" name="fullmap_option_name" size="50" /></td>
-						 <td> <span><?php _e('*Please Do not use spaces and special characters in map name','gfullmap'); ?></span> </td>
-						 <td><input type="submit" value=" <?php _e('Add Map','gfullmap'); ?> " class="button-primary" id="gfullmap_add_btn" name="gfullmap_add_btn"></td>
+							<td><input style=" border: 1px solid #AAAAAA;" type="text" id="fullmap_option_name" name="fullmap_option_name" size="50" /></td>
+							<td style="text-align:center;"> <span><?php _e('*Please Do not use spaces and special characters in map name','gfullmap'); ?></span> </td>
+							<td><input type="submit" value=" <?php _e('Add New GoogleMap','gfullmap'); ?> " class="button-primary" id="gfullmap_add_btn" name="gfullmap_add_btn"></td>
 						</tr>				
 					</table>			
 				</form>	 <!-- Add new Map Form end-->  
