@@ -1,5 +1,5 @@
 === Google Map Lightbox Popup ===
-Contributors: rahulbrilliant2004, tikendramaitry, Nishant Jain
+Contributors: rahulbrilliant2004, tikendramaitry
 Donate link: http://www.wpfruits.com/
 Tags: google map popup, google map plugin, map address google, google map contact pop up, google map lightbox popup, google map lightbox, google map widget, google map popup widget
 Requires at least: 3.0.0
