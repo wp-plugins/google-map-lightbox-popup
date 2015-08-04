@@ -37,7 +37,7 @@ function fwbgm_front_show($option='gfullmap_options'){
 		else{
 			$tmp  = "";
 			$tmp .= '<div id="cf_custom_content"  style="position:relative;"><a class="wpf_ref" href="'.$from_this.'" target="_blank">WPF</a> <a  class="gfullmap-thumbnail-map"  href="javascript:void(0);" data-href="#?custom=true&width=500&height=500" title="Click to open larger map">';
-			$tmp .= '<img class="click_it" class-value="createPopup-'.$option.'" style="background: none repeat scroll 0 0 #F3F3F3;border: 1px solid #CCCCCC; padding: 5px;" title="Click to open larger map" alt="Click to open larger map" src="https://maps.googleapis.com/maps/api/staticmap?center='.urlencode($options['g_thumb_address']) . '&amp;zoom=' . $options['g_zoom_val'] . '&amp;size=' . $options['g_thumb_width'] . 'x' . $options['g_thumb_height'] . '&amp;maptype=' . $options['g_map_type'] .'&amp;sensor=false&amp;scale=1&amp;markers=size:red%7Ccolor:small%7Clabel:A%7C' .urlencode($options['g_thumb_address']) . '"></a>';
+			$tmp .= '<img class="click_it" class-value="createPopup-'.$option.'" style="background: none repeat scroll 0 0 #F3F3F3;border: 1px solid #CCCCCC; padding: 5px;" title="Click to open larger map" alt="Click to open larger map" src="https://maps.googleapis.com/maps/api/staticmap?center='.urlencode($options['g_thumb_address']) . '&amp;zoom=' . $options['g_zoom_val'] . '&amp;size=' . $options['g_thumb_width'] . 'x' . $options['g_thumb_height'] . '&amp;maptype=' . $options['g_map_type'] .'&amp;language=' . $options['gmap_language'] .'&amp;sensor=false&amp;scale=1&amp;markers=size:red%7Ccolor:small%7Clabel:A%7C' .urlencode($options['g_thumb_address']) . '"></a>';
 			$tmp .= '</div>';	
 			$out  = $tmp ;					
 	   }
@@ -104,7 +104,7 @@ function show_lightbox($option='gfullmap_options')
 	$map_url   = 'http://maps.google.com/maps?hl=en&amp;ie=utf8&amp;output=embed&amp;iwloc=' . $iwloc . '&amp;iwd=1&amp;mrt=loc&amp;t='. $fgm_glightbox_map_type . '&amp;q=' . urlencode(remove_accents($fgm_glightbox_add)) . '&amp;z=' . urlencode($fgm_glightbox_zoom) . '';
 
 	$lout .= '<div class="gmbdm-dialog"  data-map-height="' . $fgm_glightbox_height . '" gmaptype="'.$fgm_glightbox_map_type.'" data-map-width="' . $fgm_glightbox_width . '" data-map-skin="black-square" data-map-iframe-url="'.$map_url.'" id="dialog-lightgmap-'.$option.'" title="Google Map">';
-	$lout .= '<div class="createPopup gmbdm-map createPopup-'.$option.'" style="overflow: auto;"><div class="innerdiv" style="border:10px solid #000000; z-index:999999999;position:relative; margin:auto; display:block; height:'.$fgm_glightbox_height.'px; width:'.$fgm_glightbox_width.'px;"><div class="cf-close"></div><iframe  height='.$fgm_glightbox_height.'px width='.$fgm_glightbox_width.'px src="'.$map_url.'"></iframe></div></div>';
+	$lout .= '<div class="createPopup gmbdm-map createPopup-'.$option.'" style="overflow: auto;"><div class="innerdiv" style="border:10px solid #000000; z-index:999999999;position:relative; margin:auto; display:block; height:'.($fgm_glightbox_height+20).'px; width:'.$fgm_glightbox_width.'px;"><div class="cf-close"></div><iframe  height='.$fgm_glightbox_height.'px width='.$fgm_glightbox_width.'px src="'.$map_url.'"></iframe></div></div>';
 	$lout .= '</div>'; 		 
 
 	echo $lout;
