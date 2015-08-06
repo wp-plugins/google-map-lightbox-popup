@@ -23,8 +23,7 @@ Google Map Popup plugin allows you to add a google map popup image which on clic
  -   Highly customizable with the height and width of the image and the popup that will come up.
  -   Allows you to add your address bubble on the map.
  -   Last but not the least its FREE
-
-<h1>View Plugin Demo here - <a href="http://demo.sketchthemes.com/google-map-lightbox/"> Here </a></h1>
+**View Plugin Demo here - <a href="http://demo.sketchthemes.com/google-map-lightbox/"> Here </a>**
 
 
 = Features =
